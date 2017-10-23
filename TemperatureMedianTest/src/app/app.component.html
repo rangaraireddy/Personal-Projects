@@ -1,0 +1,31 @@
+<div class="center-area">
+  <h1 style="text-align: center;">
+      Temperature Monitor
+  </h1>
+  <div class="text-area">
+      <span>Add Temperature (in F):</span>
+      <input [disabled]="(temperatureRecords.length === 8)" NumberValidator="true" [ngModel]="model" (ngModelChange)="validate($event)">
+      <button [disabled]="disableAddButton" (click)="addTemperature(model)" type="button" id="myButton" class="btn btn-primary" autocomplete="off">
+         ADD
+      </button>
+  </div>  
+  <div class="text-area" *ngIf="entryError" style="color: red;"> Not a valid entry </div>   
+  <div class="text-area" *ngIf="(temperatureRecords.length === 8)" style="color: red;"> You have reached your maximum record entry limit </div>  
+  <div class="text-area">
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" [ngStyle]="{'width': colorPercentage()}">
+          {{(temperatureRecords.length)}} Records
+        </div>
+      </div>
+  </div>
+  <div class="text-area row">
+    <div class="col-xs-12 col-md-6">
+        <button [disabled]="!(temperatureRecords.length>0)" (click)="getMedianTemperature()" type="button" id="myButton" class="btn btn-primary" autocomplete="off">
+            Get Median Temperature
+        </button>
+    </div>
+    <div *ngIf="showMedian" class="col-xs-6 col-md-6">
+        <h4>{{fahrenheitTemperature  | number:'1.2-2'}} F (or) {{celsiusTemperature | number:'1.2-2'}} &deg;C</h4>
+    </div>
+  </div>
+</div>
