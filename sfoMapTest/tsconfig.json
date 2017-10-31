@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
+    },
+    "include": [
+        "app/*.ts",
+        "app/**/*.ts",
+        "test/unit/*.ts",
+        "test/unit/**/*.ts",
+        "test/mocks/*.ts",
+        "test/mocks/**/*.ts",
+        "typings/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "test/e2e/**/*.ts"
+    ]
+}

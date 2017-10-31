@@ -1,0 +1,25 @@
+@import '../app.scss';
+
+.map-route {
+    height: calc( 100% - 64px );
+    .sfo-map-draw {
+        width: 100%;
+        .aerial {
+            fill: none;
+            stroke-width: 1px;        
+            
+        }
+        .streets {
+            stroke: $grey;
+        }
+        .arteries {
+            stroke: $mat-blue;
+        }
+        .neighborhoods {
+            stroke: $yellowish-green;
+        }
+        .freeways {
+            stroke: $orange;
+        }
+    }
+}

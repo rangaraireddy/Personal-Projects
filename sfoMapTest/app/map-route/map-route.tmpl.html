@@ -1,0 +1,31 @@
+<div class="map-route" layout="column" layout-align="center">
+        <md-content layout-padding>                        
+                <div layout="column" layout-align="top center">
+                        <p>Click the button to toggle routes on map</p>
+                        <md-button ng-click="vm.toggleRoutesMenu()" class="md-primary">Open Routes</md-button>
+                </div>
+        </md-content>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="routesMenu">
+                <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">All Routes</h1>
+                </md-toolbar>
+                <md-content layout-padding>  
+                        <div layout="row" layout-wrap flex>                               
+                                <div style="padding-left: 30px;" flex="100" ng-repeat="item in vm.tramRoutes">
+                                        <md-checkbox ng-click="vm.checkedRoute(item)">
+                                                {{ item.tag }}
+                                        </md-checkbox>
+                                </div>
+                        </div>              
+                <md-button ng-click="vm.toggleRoutesMenu()" class="md-primary">
+                        Close
+                </md-button>
+                </md-content>
+        </md-sidenav>
+                                
+        <div flex layout="row" layout-align="center" layout-padding>
+                <div class="sfo-map-draw" style="height: 150%;">
+                </div>
+        </div>       
+</div>

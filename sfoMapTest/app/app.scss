@@ -1,0 +1,24 @@
+$black: #000;
+$brown: #6d3527;
+$yellowish-green: #72b445;
+$grey: #666;
+$grey-dark: #333;
+$grey-light: #999;
+$grey-very-light: #ccc;
+$orange: #ff661b;
+$tan: #dfdecc;
+$tan-light: #f5f5f0;
+$white: #fff;
+$mat-blue: #106CC8;
+
+.sfo-base-map {
+    height: 100%;
+    .main-toolbar {
+        background: $mat-blue;
+        color: $white;
+    }
+}
+
+* {
+    font-family: Roboto, Helvetica Neue, sans-serif;
+}
